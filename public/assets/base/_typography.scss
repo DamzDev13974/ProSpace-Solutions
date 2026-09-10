@@ -1,0 +1,10 @@
+//Typo de base du site
+
+@use "../abstracts/variables" as*;
+@use "../abstracts/mixins" as*;
+
+body{
+    font-family: $font-primary;
+    line-height: 1.6;
+    
+}

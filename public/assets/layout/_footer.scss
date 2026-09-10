@@ -1,0 +1,104 @@
+@use "../abstracts/variables" as*;
+@use "../abstracts/mixins" as*;
+
+//Mise en place du CSS pour le footer
+
+footer{
+    background-color: $blue-bkg;
+    .container{
+        padding:$spacing-3xl $spacing-lg;
+    }
+}
+
+/* Partie haut du footer avec les 4 collonnes */
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    gap: $spacing-xl;
+}
+
+/* Première colonne avec logo, description et lien de contact */
+.footer-contact {
+    width: 24%;
+
+    .logo-footer {
+        display: flex;
+        align-items: center;
+        gap: $spacing-base;
+        margin-bottom: $spacing-base;
+        .logo-footer-icon{
+            @include flex-center;
+            width: 28px;
+            height: 28px;
+            background-color: $blue-secd;
+            border-radius: 10px;
+        }
+        img {
+            width: 15px;
+            height: 15px;
+        }
+        p {
+            color: white;
+            font-weight: 700;
+            span {
+                color: $blue-prim;
+            }
+        }
+    }
+    > p {
+        max-width: 200px;
+        color: $grey-scd;
+        font-size: $text-sm;
+        line-height: 1.6;
+        margin-bottom: $spacing-base;
+    }
+    .wrapper {
+        @include icon-text;
+        a {
+            color: $blue-prim;
+            font-size: $text-sm;
+            &:hover{
+                color: white;
+            }
+        }
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+/* Colonnes de navigation du footer */
+.nav-footer {
+    width: 22%;
+    h2 {
+        color: white;
+        font-size: $text-base;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: $spacing-base;
+    }
+    a {
+        color: $grey-color;
+        font-size: $text-base;
+
+        &:hover {
+            color: $blue-prim;
+        }
+    }
+}
+
+/* Partie basse avec copyright et accessibilité */
+.footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $spacing-xl;
+    padding-top: $spacing-lg;
+    border-top: 1px solid $grey-dark;
+    p {
+        color: $grey-dark;
+        font-size: $text-sm;
+    }
+}

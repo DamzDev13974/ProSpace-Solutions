@@ -1,0 +1,26 @@
+//Import des fichiers scss pour la compilation en css
+
+/* Variables et mixins */
+@use "abstracts/variables";
+@use "abstracts/mixins";
+
+/* Base */
+@use "base/reset" as*;
+@use "base/typography" as*;
+@use "base/global" as*;
+
+/* Components */
+@use "components/buttons";
+@use "components/cards";
+@use "components/forms";
+@use "components/carousel";
+
+/* Layout */
+@use "layout/header";
+@use "layout/footer";
+
+/* Pages */
+@use "pages/accueil";
+@use "pages/espace";
+@use "pages/mes-espaces";
+@use "pages/contact";

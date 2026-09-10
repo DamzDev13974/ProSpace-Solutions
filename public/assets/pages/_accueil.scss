@@ -1,0 +1,204 @@
+@use "../abstracts/variables" as*;
+@use "../abstracts/mixins" as*;
+
+//Mise en page CSS de la page accueil 
+
+/* =================== 
+        HERO  
+=====================*/
+
+/* Section principale du Hero */
+
+@use "../abstracts/variables" as *;
+
+/* Section principale du Hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 602px;
+
+    /* Dégradé sombre placé devant l'image pour améliorer la lisibilité du texte */
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+            to right,
+            rgba(15, 23, 42, 0.95),
+            rgba(15, 23, 42, 0.75),
+            rgba(15, 23, 42, 0.35)
+        );
+        z-index: 1;
+    }
+}
+
+.hero .container {
+    min-height: 602px;
+    display: flex;
+    align-items: center;
+}
+
+/* Image du Hero placée en fond */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+/* Contenu du Hero placé au-dessus de l'image et du dégradé */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 672px;
+}
+/* Badge "Location B2B en France" */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-sm;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 1.25rem;
+    background-color: #172A41;
+    color: $blue-prim;
+    border: 1px solid $blue-secd;
+    border-radius: 20px;
+    font-size: $text-sm;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    img {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* Titre principal du Hero */
+.hero-title {
+    margin-bottom: 1.25rem;
+    color: white;
+    font-size: 3.75rem;
+    line-height: 1.15;
+    font-weight: 800;
+    span {
+        color: $blue-prim;
+    }
+}
+/* Texte descriptif situé sous le titre */
+.hero-content> p {
+    color: $grey-txt;
+    font-size: $text-md;
+    line-height: 1.6;
+    
+}
+
+/* Bloc contenant les trois avantages */
+.promise {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    margin-top: $spacing-xl;
+    /* Chaque avantage avec son icône et son texte */
+    .wrapper {
+        @include icon-text;
+        color: $grey-txt;
+        font-size: $text-base;
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+/* =================== 
+    FILTRE 
+=====================*/
+
+.filter {
+    background-color: white;
+    box-shadow:
+        0 1px 3px 0 rgb(0 0 0 / 0.1),
+        0 1px 2px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Formulaire contenant l'ensemble des filtres */
+.filter-home {
+    min-height: 66px;
+    display: flex;
+    align-items: center;
+    gap: $spacing-base;
+    .wrapper {
+    @include icon-text;
+    padding: 0 0 0 $spacing-base;
+    border-right: 1px solid $grey-border;
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+/* Texte affiché à côté de l'icône filtre */
+.filter-text {
+    color: $grey-color;
+    font-size: $text-base;
+    text-transform: uppercase;
+    margin-right: $spacing-base
+}
+
+/* Style des listes déroulantes */
+.filter-home select {
+    padding: 0.5rem 0.75rem;
+    color: $black-title;
+    background-color: white;
+    border: 1px solid $grey-border;
+    border-radius: 12px;
+    font-size: $text-base;
+}
+
+/* Conteneur des différentes cases à cocher */
+.checkbox-options {
+    display: flex;
+    align-items: center;
+    gap: $spacing-base;
+    label {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        color: $grey-dark;
+        font-size: $text-base;
+        cursor: pointer;
+        &:hover{
+            color:$blue-secd;
+        }
+    }
+
+    /* Taille des cases à cocher */
+    input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+}
+
+/* =================== 
+    Section GRID-SPACE 
+=====================*/
+
+.grid-space>.container{
+    padding: $spacing-2xl $spacing-lg;
+    .grid-title{
+        font-size: $text-md;
+        font-weight: 600;
+        color: $black-title;
+    }
+}
+
+/* Attente du Js pour générer les cartes */

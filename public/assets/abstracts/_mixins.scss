@@ -1,0 +1,16 @@
+//Raccourcis pour SCSS
+@use "_variables.scss" as*;
+
+/* Centre horizontalement et verticalement un élément avec Flexbox */
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Aligne une icône et un texte sur une même ligne avec un espacement régulier */
+@mixin icon-text {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+}

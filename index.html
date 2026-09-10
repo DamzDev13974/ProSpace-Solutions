@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trouvez et comparez des espaces de travail flexibles partout en France : coworking, salles de réunion, bureaux privatifs et solutions adaptées aux pros.">
+    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="shortcut icon" href="public/assets/img/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="public/assets/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="public/assets/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="public/assets/img/favicon/apple-touch-icon.png">
+    <title>ProSpace Solutions | Solutions d'espaces de travail B2B</title>
+</head>
+<body>
+    <main>
+        <header>
+            <!-- HEADER avec le nombre de favoris changeant dynamiquement -->
+            <div class="container header-content">
+                <div class="logo-header">
+                    <div class="logo-icon">
+                        <img src="public/assets/img/icon/prospace-logo.svg" alt="Logo ProSpace - Solutions">
+                    </div>
+                    <a href="index.html" aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">ProSpace <span>Solutions</span></a>
+                </div>
+                <nav class="nav-header">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="active" aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="public/pages/mes-espaces.html" aria-label="Aller sur la page des mes espaces favoris" title="Aller sur la page des mes espaces favoris">Mes espaces <span id="nb-favorite">1</span></a>
+                        </li>
+                        <li>
+                            <a href="public/pages/contact.html" aria-label="Aller sur la page contact" title="Aller sur la page contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- Section HERO / BANNER sans affichage dynamique -->
+        <section class="hero">
+            <img  class="hero-background" src="public/assets/img/banner-espace-travail-professionnel.webp" alt="">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="badge wrapper">
+                        <img src="public/assets/img/icon/logo-blue.svg" alt="">
+                        <p>location b2b en france</p>
+                    </div>
+                    <h1 class="hero-title">Trouvez votre espace de travail idéal <span>en France</span></h1>
+                    <p>Salles de réunion, bureaux privatifs et espaces premium disponibles à la demande dans les grandes villes françaises.</p>
+                    <div class="promise">
+                        <div class="wrapper">
+                            <img src="public/assets/img/icon/checked.svg" alt="">
+                            <p>Réservation instantanée</p>
+                        </div>
+                        <div class="wrapper">
+                            <img src="public/assets/img/icon/checked.svg" alt="">
+                            <p>Annulation flexible</p>
+                        </div>
+                        <div class="wrapper">
+                            <img src="public/assets/img/icon/checked.svg" alt="">
+                            <p>Support dédié</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section FILTRE pour l'affichage via les filtres sélectionnés par l'user -->
+        <section class="filter">
+            <div class="container">
+                <form class="filter-home">
+                    <div class="wrapper">
+                        <img src="public/assets/img/icon/settings.svg" alt="">
+                        <p class="filter-text">filtrer</p>
+                    </div>
+                    <select name="town" id="filter-town" aria-label="Choisir la ville">
+                        <option value="">Toutes les villes</option>
+                        <!-- à boucler sur le JSON pour les villes dispo via les espaces -->
+                    </select>
+                    <select name="capacity" id="filter-capacity" aria-label="Choisir la capacité">
+                        <option value="">Toutes les capactités</option>
+                        <!-- à boucler sur le JSON pour les capacité dispo via les espaces -->
+                    </select>
+                    <div class="checkbox-options">
+                        <label for="wifi-option">
+                            <input type="checkbox" name="wifi" id="wifi-option">
+                            Wifi Fibre
+                        </label>
+                        <label for="pmr-option">
+                            <input type="checkbox" name="pmr" id="pmr-option">
+                            Accès PMR
+                        </label>
+                        <label for="screen-4k-option">
+                            <input type="checkbox" name="4k" id="screen-4k-option">
+                            Écran 4K
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- Section GRID-SPACE qui affichera les cards par défaut et le nombre de résulstat selon les filtres sélectionnés -->
+        <section class="grid-space">
+            <div class="container">
+                <h2 class="grid-title"><span id="nb-space-grid"></span>espaces disponibles</h2>
+                <div class="grid-cards" id="grid-cards">
+                    <!-- articles card à alimenter via le JSON  -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- partie du FOOTER sans changement dynamique -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <div class="logo-footer">
+                        <div class="logo-footer-icon">
+                            <img src="public/assets/img/icon/prospace-logo.svg" alt="Logo ProSpace - Solutions">
+                        </div>
+                        <p>ProSpace <span>Solutions</span></p>
+                    </div>
+                    <p>Location d'espaces professionnels en France pour les entreprises et indépendants exigeants</p>
+                    <div class="wrapper">
+                        <img src="public/assets/img/icon/letter.svg" alt="">
+                        <a href="public/pages/contact.html" aria-label="Aller sur la page de contact" title="Aller sur la page de contact ">Nous contacter</a>
+                    </div>
+                </div>
+                <nav class="nav-footer">
+                    <h2>destinations</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Espaces à Paris</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Lyon</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Bordeaux</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Nantes</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Marseille</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Toulouse</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Lille</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="nav-footer">
+                    <h2>services</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Salles de réunion</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces de coworking</a>
+                        </li>
+                        <li>
+                            <a href="#">Salles de formations</a>
+                        </li>
+                        <li>
+                            <a href="#">Bureaux privatifs</a>
+                        </li>
+                        <li>
+                            <a href="#">Studios visio</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces événements</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="nav-footer">
+                    <h2>légal et & accés</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Mentions légales</a>
+                        </li>
+                        <li>
+                            <a href="#">CGU & CGV</a>
+                        </li>
+                        <li>
+                            <a href="#">Politique de confidentialité</a>
+                        </li>
+                        <li>
+                            <a href="#">Gestion des cookies</a>
+                        </li>
+                        <li>
+                            <a href="#">Déclaration d'accésibilité</a>
+                        </li>
+                        <li>
+                            <a href="#">Sitemap</a>
+                        </li> 
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-legal">
+                <p>© 2025 ProSpace Solutions SAS — Tous droits réservés</p>
+                <p>Conformité RGAA 4.1 · Accessibilité : partiellement conforme</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

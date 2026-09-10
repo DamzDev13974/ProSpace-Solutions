@@ -1,0 +1,446 @@
+@charset "UTF-8";
+/* Variables et mixins */
+/* Couleurs */
+/* Espacements */
+/* Font-sizes */
+/* Font */
+/* Variables et mixins */
+/* Centre horizontalement et verticalement un élément avec Flexbox */
+/* Aligne une icône et un texte sur une même ligne avec un espacement régulier */
+/* Base */
+/* Variables et mixins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Variables et mixins */
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Variables et mixins */
+.container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Components */
+/* Variables et mixins */
+/* Variables et mixins */
+/* Variables et mixins */
+/* Variables et mixins */
+/* Layout */
+/* Variables et mixins */
+header {
+  background-color: #0F172A;
+}
+
+/* Alignement du logo à gauche et nav à droite */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  min-height: 64px;
+}
+
+/* Mise en place du bloc contenant le logo sur fond bleu arrondi et nom de l'entrprise  */
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo-header .logo-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background-color: #0284C7;
+  border-radius: 12px;
+}
+.logo-header .logo-icon img {
+  width: 17px;
+  height: 17px;
+}
+.logo-header a {
+  color: white;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.logo-header a span {
+  color: #38BDF8;
+}
+
+/* Alignement de la nav, du hover sur les liens présents et celui actif */
+.nav-header ul {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-header li {
+  display: flex;
+  align-items: center;
+}
+.nav-header a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #CAD5E2;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.nav-header a:hover {
+  color: white;
+  background-color: #1e293b;
+  padding: 0.5rem 0.875rem;
+  border-radius: 10px;
+}
+.nav-header a.active {
+  color: #38BDF8;
+  background-color: #1e293b;
+  padding: 0.5rem 0.875rem;
+  border-radius: 10px;
+}
+
+/* Badge affichant le nombre d'espaces enregistrés en favoris */
+#nb-favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 20px;
+  height: 20px;
+  margin-left: 0.25rem;
+  background-color: #0284C7;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+/* Variables et mixins */
+footer {
+  background-color: #0F172A;
+}
+footer .container {
+  padding: 3.5rem 1.5rem;
+}
+
+/* Partie haut du footer avec les 4 collonnes */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Première colonne avec logo, description et lien de contact */
+.footer-contact {
+  width: 24%;
+}
+.footer-contact .logo-footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.footer-contact .logo-footer .logo-footer-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  background-color: #0284C7;
+  border-radius: 10px;
+}
+.footer-contact .logo-footer img {
+  width: 15px;
+  height: 15px;
+}
+.footer-contact .logo-footer p {
+  color: white;
+  font-weight: 700;
+}
+.footer-contact .logo-footer p span {
+  color: #38BDF8;
+}
+.footer-contact > p {
+  max-width: 200px;
+  color: #62748E;
+  font-size: 0.75rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.footer-contact .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.footer-contact .wrapper a {
+  color: #38BDF8;
+  font-size: 0.75rem;
+}
+.footer-contact .wrapper a:hover {
+  color: white;
+}
+.footer-contact .wrapper img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Colonnes de navigation du footer */
+.nav-footer {
+  width: 22%;
+}
+.nav-footer h2 {
+  color: white;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+.nav-footer a {
+  color: #90A1B9;
+  font-size: 0.875rem;
+}
+.nav-footer a:hover {
+  color: #38BDF8;
+}
+
+/* Partie basse avec copyright et accessibilité */
+.footer-legal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #45556C;
+}
+.footer-legal p {
+  color: #45556C;
+  font-size: 0.75rem;
+}
+
+/* Pages */
+/* Variables et mixins */
+/* Variables et mixins */
+/* =================== 
+        HERO  
+=====================*/
+/* Section principale du Hero */
+/* Section principale du Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 602px;
+  /* Dégradé sombre placé devant l'image pour améliorer la lisibilité du texte */
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.35));
+  z-index: 1;
+}
+
+.hero .container {
+  min-height: 602px;
+  display: flex;
+  align-items: center;
+}
+
+/* Image du Hero placée en fond */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Contenu du Hero placé au-dessus de l'image et du dégradé */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 672px;
+}
+
+/* Badge "Location B2B en France" */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 1.25rem;
+  background-color: #172A41;
+  color: #38BDF8;
+  border: 1px solid #0284C7;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.badge img {
+  width: 12px;
+  height: 12px;
+}
+
+/* Titre principal du Hero */
+.hero-title {
+  margin-bottom: 1.25rem;
+  color: white;
+  font-size: 3.75rem;
+  line-height: 1.15;
+  font-weight: 800;
+}
+.hero-title span {
+  color: #38BDF8;
+}
+
+/* Texte descriptif situé sous le titre */
+.hero-content > p {
+  color: #CAD5E2;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Bloc contenant les trois avantages */
+.promise {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  /* Chaque avantage avec son icône et son texte */
+}
+.promise .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #CAD5E2;
+  font-size: 0.875rem;
+}
+.promise .wrapper img {
+  width: 16px;
+  height: 16px;
+}
+
+/* =================== 
+    FILTRE 
+=====================*/
+.filter {
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulaire contenant l'ensemble des filtres */
+.filter-home {
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.filter-home .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0 0 1rem;
+  border-right: 1px solid #E2E8F0;
+}
+.filter-home .wrapper img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Texte affiché à côté de l'icône filtre */
+.filter-text {
+  color: #90A1B9;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+
+/* Style des listes déroulantes */
+.filter-home select {
+  padding: 0.5rem 0.75rem;
+  color: #0F172A;
+  background-color: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  font-size: 0.875rem;
+}
+
+/* Conteneur des différentes cases à cocher */
+.checkbox-options {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.checkbox-options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #45556C;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.checkbox-options label:hover {
+  color: #0284C7;
+}
+.checkbox-options {
+  /* Taille des cases à cocher */
+}
+.checkbox-options input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* =================== 
+    Section GRID-SPACE 
+=====================*/
+.grid-space > .container {
+  padding: 3rem 1.5rem;
+}
+.grid-space > .container .grid-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0F172A;
+}
+
+/* Attente du Js pour générer les cartes */
+/* Variables et mixins */
+/* Variables et mixins */
+/* Variables et mixins */
+
+/*# sourceMappingURL=styles.css.map */

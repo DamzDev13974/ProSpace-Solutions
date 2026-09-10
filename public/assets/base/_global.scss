@@ -1,0 +1,19 @@
+//Styles globaux
+@use "../abstracts/variables" as*;
+@use "../abstracts/mixins" as*;
+
+.container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}

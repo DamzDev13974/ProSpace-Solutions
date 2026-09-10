@@ -1,0 +1,92 @@
+@use "../abstracts/variables" as*;
+@use "../abstracts/mixins" as*;
+
+//Mise en page CSS du header
+
+
+header {
+    background-color: $blue-bkg;
+}
+
+/* Alignement du logo à gauche et nav à droite */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $spacing-lg ;
+    min-height: 64px;
+}
+
+/* Mise en place du bloc contenant le logo sur fond bleu arrondi et nom de l'entrprise  */
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+
+    .logo-icon {
+        @include flex-center;
+        width: 32px;
+        height: 32px;
+        background-color: $blue-secd;
+        border-radius: 12px;
+        img {
+            width: 17px;
+            height: 17px;
+        }
+    }
+    a {
+        color: white;
+        font-size: $text-md;
+        font-weight: bold;
+        span {
+            color: $blue-prim;
+        }
+    }
+}
+
+/* Alignement de la nav, du hover sur les liens présents et celui actif */
+.nav-header {
+    ul {
+        display: flex;
+        align-items: center;
+        gap: $spacing-lg;
+    }
+    li {
+        display: flex;
+        align-items: center;
+    }
+    a {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: $grey-txt;
+        font-size: $text-base;
+        font-weight: 500;
+        &:hover {
+            color: white;
+            background-color: #1e293b;
+            padding: 0.5rem 0.875rem;
+            border-radius: 10px;
+        }
+        &.active {
+            color: $blue-prim;
+            background-color: #1e293b;
+            padding: 0.5rem 0.875rem;
+            border-radius: 10px;
+        }
+    }
+}
+
+/* Badge affichant le nombre d'espaces enregistrés en favoris */
+#nb-favorite {
+    @include flex-center;
+    min-width: 20px;
+    height: 20px;
+    margin-left: 0.25rem;
+    background-color: $blue-secd;
+    color: white;
+    border-radius: 50%;
+    font-size: $text-sm;
+}
+
+
