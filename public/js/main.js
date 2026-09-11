@@ -2,21 +2,21 @@
 
 
 /* =========================================================================
--getEspaces() : récupère les données des espaces depuis le fichier JSON
+-getEspaces(url) : récupère les données des espaces depuis le fichier JSON
 -getFavoris():  récupère la liste des favoris enregistrés dans le localStorage
 -updateNbFavoris(): met à jour le nombre de favoris affiché dans le badge du header
 -addOrRemoveFavori(idEspace): ajoute ou retire un espace des favoris
 =========================================================================== */
 
-async function getEspaces(){
+async function getEspaces(url){
     //Role : récupère les données des espaces depuis le fichier JSON
     //Paramètres:
-    //      néant
+    //      url : chemin du fichier JSON
     //Retour : tableau contenant les espaces
 
     try {
         //Je récupère le fichier JSON
-        const response = await fetch("public/data/espaces.json");
+        const response = await fetch(url);
         //Je vérifie que la requête s'est bien déroulée
         if (!response.ok) {
             throw new Error("Erreur lors du chargement des espaces");
@@ -94,6 +94,10 @@ function addOrRemoveFavori(idEspace){
     //Je mets à jour le compteur du header
     updateNbFavoris();
 }
+
+
+//Mise à jour du badge au chargement de chaque page
+updateNbFavoris();
 
 
 

@@ -12,31 +12,31 @@
     <title>ProSpace Solutions | Solutions d'espaces de travail B2B</title>
 </head>
 <body>
-    <main>
-        <header>
-            <!-- HEADER avec le nombre de favoris changeant dynamiquement -->
-            <div class="container header-content">
-                <div class="logo-header">
-                    <div class="logo-icon">
-                        <img src="public/assets/img/icon/prospace-logo.svg" alt="Logo ProSpace - Solutions">
-                    </div>
-                    <a href="index.html" aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">ProSpace <span>Solutions</span></a>
+    <header>
+        <!-- HEADER avec le nombre de favoris changeant dynamiquement -->
+        <div class="container header-content">
+            <div class="logo-header">
+                <div class="logo-icon">
+                    <img src="public/assets/img/icon/prospace-logo.svg" alt="Logo ProSpace - Solutions">
                 </div>
-                <nav class="nav-header">
-                    <ul>
-                        <li>
-                            <a href="index.html" class="active" aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">Accueil</a>
-                        </li>
-                        <li>
-                            <a href="public/pages/mes-espaces.html" aria-label="Aller sur la page des mes espaces favoris" title="Aller sur la page des mes espaces favoris">Mes espaces <span id="nb-favorite"></span></a>
-                        </li>
-                        <li>
-                            <a href="public/pages/contact.html" aria-label="Aller sur la page contact" title="Aller sur la page contact">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
+                <a href="index.html" aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">ProSpace <span>Solutions</span></a>
             </div>
-        </header>
+            <nav class="nav-header">
+                <ul>
+                    <li>
+                        <a href="index.html" class="active" aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="public/pages/mes-espaces.html" aria-label="Aller sur la page des mes espaces favoris" title="Aller sur la page des mes espaces favoris">Mes espaces <span id="nb-favorite"></span></a>
+                    </li>
+                    <li>
+                        <a href="public/pages/contact.html" aria-label="Aller sur la page contact" title="Aller sur la page contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
         <!-- Section HERO / BANNER sans affichage dynamique -->
         <section class="hero">
             <img  class="hero-background" src="public/assets/img/banner-espace-travail-professionnel.webp" alt="">
@@ -71,7 +71,7 @@
                 <form class="filter-home">
                     <div class="wrapper">
                         <img src="public/assets/img/icon/settings.svg" alt="">
-                        <p class="filter-text">filtrer</p>
+                        <h2 class="filter-text">filtrer</h2>
                     </div>
                     <select name="town" id="filter-town" aria-label="Choisir la ville">
                         <option value="">Toutes les villes</option>
@@ -98,7 +98,7 @@
                             Écran 4K
                         </label>
                     </div>
-                    <span id="pop-nb"><span></span>
+                    <span id="pop-nb"></span>
                 </form>
             </div>
         </section>

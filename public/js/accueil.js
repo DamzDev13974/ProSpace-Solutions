@@ -22,6 +22,8 @@ const gridCards = document.getElementById("grid-cards");
 const nbSpaceGrid = document.getElementById("nb-space-grid");
 //Pour le nombre de résultat dans le filtre
 const popNb= document.getElementById("pop-nb");
+//Url pour l'appel de l'api
+const url = "public/data/espaces.json";
 
 
 async function initAccueil(){
@@ -31,7 +33,7 @@ async function initAccueil(){
     //Retour : néant
 
     //Je récupère les espaces depuis le fichier JSON
-    const espaces = await getEspaces();
+    const espaces = await getEspaces(url);
     //J'affiche les espaces dans la grille
     afficherEspaces(espaces);
     //J'affiche les selects dans le filtre de recherche

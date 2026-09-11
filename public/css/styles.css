@@ -291,7 +291,6 @@ header {
 .nav-header ul {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
 }
 .nav-header li {
   display: flex;
@@ -303,12 +302,12 @@ header {
   gap: 0.4rem;
   color: #CAD5E2;
   font-size: 0.875rem;
+  padding: 0.5rem 0.875rem;
   font-weight: 500;
 }
 .nav-header a:hover {
   color: white;
   background-color: #1e293b;
-  padding: 0.5rem 0.875rem;
   border-radius: 10px;
 }
 .nav-header a.active {
