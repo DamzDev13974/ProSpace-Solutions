@@ -4,14 +4,8 @@
 //Mise en page CSS de la page accueil 
 
 /* =================== 
-        HERO  
+    HERO  
 =====================*/
-
-/* Section principale du Hero */
-
-@use "../abstracts/variables" as *;
-
-/* Section principale du Hero */
 .hero {
     position: relative;
     overflow: hidden;
@@ -179,7 +173,6 @@
             color:$blue-secd;
         }
     }
-
     /* Taille des cases à cocher */
     input {
         width: 16px;
@@ -188,17 +181,56 @@
     }
 }
 
+/* Pop up du nombre de résultats */
+#pop-nb{
+    color: $grey-color;
+    font-size: $text-sm;
+    margin-left: 23rem;
+}
 /* =================== 
     Section GRID-SPACE 
 =====================*/
 
 .grid-space>.container{
     padding: $spacing-2xl $spacing-lg;
+    margin-bottom: 5rem;
     .grid-title{
         font-size: $text-md;
         font-weight: 600;
         color: $black-title;
     }
+    #grid-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: $spacing-lg;
+    }
+    .no-result{
+        @include flex-center;
+        flex-direction: column;
+        /* L'image de la oupe */
+        .no-result-icon{
+            @include flex-center;
+            width: 64px;
+            height: 64px;
+            background-color: $grey-bkg;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            img{
+                width: 28px;
+                height: 28px;
+            }
+        }
+        h3{
+          font-size: $text-md;
+          color: $grey-dark;
+          margin-bottom: 4px;
+        }
+        p{
+            font-size: $text-base;
+            color: $grey-color;
+        }
+    }
 }
 
-/* Attente du Js pour générer les cartes */

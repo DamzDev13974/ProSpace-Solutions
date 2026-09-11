@@ -1,2 +1,16 @@
 @use "../abstracts/variables" as*;
 @use "../abstracts/mixins" as*;
+
+//Style des boutons réutilisables
+
+/* Bouton principal bleu */
+.btn-primary{
+    background-color: $blue-secd;
+    color: white;
+    border-radius: 16px;
+    font-size: $text-base;
+    font-weight: 600;
+    &:hover {
+        background-color: #075985;
+    }
+}

@@ -28,7 +28,7 @@
                             <a href="index.html" class="active" aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">Accueil</a>
                         </li>
                         <li>
-                            <a href="public/pages/mes-espaces.html" aria-label="Aller sur la page des mes espaces favoris" title="Aller sur la page des mes espaces favoris">Mes espaces <span id="nb-favorite">1</span></a>
+                            <a href="public/pages/mes-espaces.html" aria-label="Aller sur la page des mes espaces favoris" title="Aller sur la page des mes espaces favoris">Mes espaces <span id="nb-favorite"></span></a>
                         </li>
                         <li>
                             <a href="public/pages/contact.html" aria-label="Aller sur la page contact" title="Aller sur la page contact">Contact</a>
@@ -79,7 +79,10 @@
                     </select>
                     <select name="capacity" id="filter-capacity" aria-label="Choisir la capacité">
                         <option value="">Toutes les capactités</option>
-                        <!-- à boucler sur le JSON pour les capacité dispo via les espaces -->
+                        <option value="1-5">1 - 5 personnes</option>
+                        <option value="6-10">6 - 10 personnes</option>
+                        <option value="11-20">11 - 20 personnes</option>
+                        <option value="20+">20+ personnes</option>
                     </select>
                     <div class="checkbox-options">
                         <label for="wifi-option">
@@ -95,13 +98,14 @@
                             Écran 4K
                         </label>
                     </div>
+                    <span id="pop-nb"><span></span>
                 </form>
             </div>
         </section>
         <!-- Section GRID-SPACE qui affichera les cards par défaut et le nombre de résulstat selon les filtres sélectionnés -->
         <section class="grid-space">
             <div class="container">
-                <h2 class="grid-title"><span id="nb-space-grid"></span>espaces disponibles</h2>
+                <h2 class="grid-title"><span id="nb-space-grid"></span> espaces disponibles</h2>
                 <div class="grid-cards" id="grid-cards">
                     <!-- articles card à alimenter via le JSON  -->
                 </div>
@@ -204,5 +208,7 @@
             </div>
         </div>
     </footer>
+    <script src="public/js/main.js"></script>
+    <script src="public/js/accueil.js"></script>
 </body>
 </html>
