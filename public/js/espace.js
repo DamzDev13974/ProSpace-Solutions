@@ -38,6 +38,8 @@ async function initEspace(){
     afficherSectionArianne(espace);
     //J'affiche les images de l'espace
     afficherSectionGallery(espace);
+    //J'affiche les détails de l'espace
+    afficherSectionDetails(espace);
 }
 
 function updateSeo(espace){
@@ -112,14 +114,88 @@ function afficherSectionGallery(espace){
     const galleryMain = document.getElementById("gallery-main");
     //Je récupère les emplacements de la gallery secondaire
     const gallerySide = document.getElementById("gallery-side");
+    //Je crée l'html pour ces emplacements
     galleryMain.innerHTML =`
         <img src="../${espace.images[0]}" alt="Espace de travail ${espace.nom}">
     `;
     gallerySide.innerHTML = `
-    <img src="../${espace.images[1]}" alt="Vue de l'espace ${espace.nom}">
-    <img src="../${espace.images[2]}" alt="Vue de l'espace ${espace.nom}">
-`;
+        <img src="../${espace.images[1]}" alt="Vue de l'espace ${espace.nom}">
+        <img src="../${espace.images[2]}" alt="Vue de l'espace ${espace.nom}">
+    `;
+}
 
+function afficherSectionDetails(espace){
+    //Role : affich les élements nécessaire à la section space-details de la page
+    //Paramètres:
+    //      espace : objet contenant les informations de l'espace
+    //Retour : néant
+
+    //Je récupère les emplacements pour la div about-space
+    const aboutSpace = document.getElementById("about-space");
+    //Je récupère les emplacements pour la div équipements
+    const equipementsList = document.getElementById("equipements-list");
+    //Je récupère les emplacements pour la div capacity
+    const capacity = document.getElementById("capacity");
+    //Et celui du pricing. 
+    const pricing = document.getElementById("pricing");
+    //Je crée l'html pour ces emplacements
+    aboutSpace.innerHTML=`
+        <h2>À propos de cet espace</h2>
+        <p>${espace.description}</p>
+    `;
+    //Je parcours le tableau des équipements et je crée un li pour chacun
+    espace.equipements.forEach(equipement => {
+        equipementsList.innerHTML += `
+            <li >
+                <div class="wrapper">
+                    <img src="../assets/img/icon/checked.svg" alt="">
+                    ${equipement}
+                </div>
+            </li>
+        `;
+    });
+    capacity.innerHTML =`
+        <h3>Capacité & Configuration</h3>
+        <div class="infos-capacity wrapper">
+            <img src="../assets/img/icon/person.svg" alt="">
+            <p>jusqu'à <span>${espace.capacite} personnes</span></p>
+            <p>Configuration modulable : théâtre, classe, U, boardroom — sur demande.</p>
+        </div>
+    `;
+    pricing.innerHTML= `
+        <h3>Tarifs</h3>
+        <ul>
+            <li>
+                <div class="wrapper">
+                    <img src="../assets/img/icon/clock-uncolor.svg" alt="">
+                    <p>À l'heure</p>
+                </div>
+                <span>${espace.tarifs.heure} €</span>
+            </li>
+            <li>
+                <div class="wrapper">
+                    <img src="../assets/img/icon/clock-uncolor.svg" alt="">
+                    <p>Demi-journée (4h)</p>
+                </div>
+                <span>${espace.tarifs.demiJournee} €</span>
+            </li>
+            <li>
+                <div class="wrapper">
+                    <img src="../assets/img/icon/clock-uncolor.svg" alt="">
+                    <p>Journée complète</p>
+                </div>
+                <span>${espace.tarifs.journee} €</span>
+            </li>
+        </ul>
+        <button type="button" onclick="addOrRemoveFavori(${espace.id})">
+            <img src="../assets/img/icon/hearth-uncolor.svg" alt="">
+            Sauvegarder
+        </button>
+        <div class="wrapper">
+            <img src="../assets/img/icon/tel.svg" alt="">
+            <a href="contact.html" aria-label="Aller sur la page contact" title="Aller sur la page contact">Contacter l'équipe</a>
+        </div>    
+    `;
 }
 
 
