@@ -6,6 +6,8 @@
 -updateSeo(espace): met à jour le titre et la meta description selon l'espace affiché
 -afficherSectionariane(espace): affiche les élements nécessaire à la section ariane de la page
 -afficherSectionGallery(espace): affiche les élements nécessaire à la section gallery de la page
+-afficherSectionDetails(espace): affiche les élements nécessaire à la section space-details de la page
+-updateBoutonFavori(idEspace): met à jour l'affichage du bouton favori selon l'état de l'espace
 =========================================================================== */
 
 
@@ -40,6 +42,8 @@ async function initEspace(){
     afficherSectionGallery(espace);
     //J'affiche les détails de l'espace
     afficherSectionDetails(espace);
+    //Je mets à jour le bouton sauvegarde de favoris
+    updateBoutonFavori(espace.id);
 }
 
 function updateSeo(espace){
@@ -129,7 +133,7 @@ function afficherSectionGallery(espace){
 }
 
 function afficherSectionDetails(espace){
-    //Role : affich les élements nécessaire à la section space-details de la page
+    //Role : affiche les élements nécessaire à la section space-details de la page
     //Paramètres:
     //      espace : objet contenant les informations de l'espace
     //Retour : néant
@@ -193,7 +197,7 @@ function afficherSectionDetails(espace){
                 <span>${espace.tarifs.journee} €</span>
             </li>
         </ul>
-        <button type="button"  onclick="addOrRemoveFavori(${espace.id})">
+        <button type="button" id="favorite-detail-btn" onclick="addOrRemoveFavori(${espace.id}); updateBoutonFavori(${espace.id})">
             <img src="../assets/img/icon/hearth-uncolor.svg" alt="">
             Sauvegarder en favoris
         </button>
@@ -205,7 +209,33 @@ function afficherSectionDetails(espace){
     `;
 }
 
+function updateBoutonFavori(idEspace){
+    //Role : met à jour l'affichage du bouton favori selon l'état de l'espace
+    //Paramètres:
+    //      idEspace : identifiant de l'espace affiché
+    //Retour : néant
 
+    //Je récupère le bouton favori de la page détail
+    const boutonFavori = document.getElementById("favorite-detail-btn");
+    //Je récupère la liste des favoris enregistrés
+    const favoris = getFavoris();
+    //Si l'espace est déjà dans les favoris, j'affiche l'état sauvegardé
+    if (favoris.includes(idEspace)) {
+        boutonFavori.classList.add("is-favorite");
+        boutonFavori.innerHTML = `
+            <img src="../assets/img/icon/hearth.svg" alt="">
+            Sauvegardé en favoris
+        `;
+    }
+    //Sinon, j'affiche l'état non sauvegardé
+    else {
+        boutonFavori.classList.remove("is-favorite");
+        boutonFavori.innerHTML = `
+            <img src="../assets/img/icon/hearth-uncolor.svg" alt="">
+            Sauvegarder en favoris
+        `;
+    }
+}
 
 
 initEspace();

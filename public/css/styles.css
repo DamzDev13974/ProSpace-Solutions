@@ -90,6 +90,7 @@ main {
 .img-card {
   position: relative;
   height: 300px;
+  background-color: #F1F5F9;
   /* Photo principale de l'espace */
 }
 .img-card > img {
@@ -623,6 +624,22 @@ footer .container {
 /* =================== 
     Section GRID-SPACE 
 =====================*/
+/* Le loader */
+.loader {
+  width: 40px;
+  height: 40px;
+  margin: 2rem auto;
+  border: 4px solid #E2E8F0;
+  border-top-color: #0284C7;
+  border-radius: 50%;
+  animation: rotation 0.8s linear infinite;
+}
+
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .grid-space > .container {
   padding: 3rem 1.5rem;
   margin-bottom: 5rem;
@@ -992,6 +1009,14 @@ footer .container {
   background-color: #F0F9FF;
   border-color: #0284C7;
   color: #0284C7;
+}
+#pricing button.is-favorite {
+  border: 1px solid #ff637e;
+  background-color: #fff1f3;
+  color: #ec003f;
+}
+#pricing button.is-favorite:hover {
+  background-color: #ffe4e6;
 }
 #pricing button img {
   width: 18px;

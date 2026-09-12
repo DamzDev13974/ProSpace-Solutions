@@ -30,6 +30,7 @@
 .img-card {
     position: relative;
     height: 300px;
+    background-color: $grey-bkg;
     /* Photo principale de l'espace */
     > img {
         width: 100%;

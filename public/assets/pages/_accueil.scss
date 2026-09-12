@@ -191,6 +191,24 @@
     Section GRID-SPACE 
 =====================*/
 
+/* Le loader */
+
+.loader {
+    width: 40px;
+    height: 40px;
+    margin: 2rem auto;
+    border: 4px solid $grey-border;
+    border-top-color: $blue-secd;
+    border-radius: 50%;
+    animation: rotation 0.8s linear infinite;
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .grid-space>.container{
     padding: $spacing-2xl $spacing-lg;
     margin-bottom: 5rem;

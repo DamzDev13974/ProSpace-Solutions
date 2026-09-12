@@ -294,11 +294,6 @@
         padding: 0.75rem 0;
         margin-bottom: 0.75rem;
         border-radius: 16px;
-        //Si déjà en favoris
-        //border: 1px solid #FF637E;
-        //background-color: #fff1f3;
-        //color: #EC003F;
-        //Si pas en favoris
         border: 1px solid $grey-border;
         background-color: white;
         color: $grey-dark;
@@ -308,12 +303,17 @@
         @include flex-center;
         gap: $spacing-sm;
         &:hover{
-            //Si déjà en favoris
-            //background-color: #FFe4e6;
-            //Si pas en favoris
             background-color: #F0F9FF;
             border-color: $blue-secd;
             color: $blue-secd;
+        }
+        &.is-favorite {
+            border: 1px solid #ff637e;
+            background-color: #fff1f3;
+            color: #ec003f;
+            &:hover {
+                background-color: #ffe4e6;
+            }
         }
         img {
             width: 18px;

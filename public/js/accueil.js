@@ -32,8 +32,14 @@ async function initAccueil(){
     //      néant
     //Retour : néant
 
+    //Je récupère le loader et l'affiche pendant le chargement des cards
+    const loader = document.getElementById("loader");
+    loader.style.display = "block";
     //Je récupère les espaces depuis le fichier JSON
     const espaces = await getEspaces(url);
+    //Je cache le spinner une fois les données récupérées
+    loader.style.display = "none";
+
     //J'affiche les espaces dans la grille
     afficherEspaces(espaces);
     //J'affiche les selects dans le filtre de recherche
