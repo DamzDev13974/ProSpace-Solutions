@@ -1,2 +1,345 @@
 @use "../abstracts/variables" as*;
 @use "../abstracts/mixins" as*;
+
+//Mise en page CSS de la page espace 
+
+/* ===================
+    ARIANE
+=================== */
+.ariane>.container{
+    padding : $spacing-xl  $spacing-lg 0;
+}
+
+/* Fil d'ariane */
+.nav-ariane {
+    margin-bottom: $spacing-xl;
+    ul {
+        @include icon-text;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
+        font-size: $text-base;
+    }
+    li:nth-child(2){
+        color: $grey-scd;
+    }
+    li:nth-child(3){
+        color: $black-title;
+    }
+    a {
+        color: $grey-color;
+        font-size: 1rem;
+    }
+    img {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Titre de l'espace  */
+#space-title >h1 {
+    margin-bottom: 0.75rem;
+    color: $black-title;
+    font-size: 2.25rem;
+    font-weight: 800;
+}
+
+.space-adresse {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    margin-bottom: 1.75rem;
+    /* Adresse */
+    .wrapper {
+        @include icon-text;
+
+        img {
+            width: 15px;
+            height: 15px;
+        }
+        p {
+            color: $grey-scd;
+            font-size: $text-sm;
+        }
+    }
+    /* Notes et avis */
+    .stars-note-details{
+        @include icon-text;
+        font-size: $text-base;
+        .nb-stars {
+            @include icon-text;
+            gap: 0.2rem;
+            img {
+                width: 13px;
+                height: 13px;
+            }
+            p {
+                color: $black-title;
+                font-weight: bold;
+            }
+        }
+        >p{
+            color: $grey-color;
+            font-size: $text-base;
+        }
+        
+    }
+}
+
+/* ===================
+   GALERIE 
+=================== */
+
+.space-gallery {
+    margin-bottom: $spacing-2xl;
+    .container {
+        display: flex;
+        gap: $spacing-sm;
+        height: 400px;
+        padding: 0 $spacing-lg;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+/* Image principale à gauche */
+#gallery-main {
+    width: 67%;
+    overflow: hidden;
+    border-radius: 16px 0 0 16px;
+    
+}
+
+/* Images secondaires à droite */
+#gallery-side {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    /* Image secondaire du haut */
+    .gallery-side-top {
+        height: 65%;
+        overflow: hidden;
+        border-radius: 0 16px 0 0;
+    }
+    /* Image secondaire du bas */
+    .gallery-side-bottom {
+        height: 35%;
+        overflow: hidden;
+        border-radius: 0 0 16px 0;
+    }
+}
+
+/* ===================
+    DÉTAILS
+=================== */
+
+.space-details {
+    padding-bottom: 6rem;
+        .space-details-content {
+        display: flex;
+        gap: $spacing-xl;
+        align-items: flex-start;
+        padding : 0  $spacing-lg $spacing-2xl;
+    }
+}
+
+/* Colonne principale à gauche */
+.space-details-main {
+    width: 68%;
+}
+
+/* Bloc description */
+#about-space {
+    margin-bottom: 2.5rem;
+    h2 {
+        margin-bottom: $spacing-base;
+        font-size: 1.25rem;
+        color: $black-title;
+    }
+    p {
+        color: $grey-dark;
+    }
+}
+
+/* Partie pour listing des équipements */
+.equipements {
+    margin-bottom: 2.5rem;
+    h2 {
+        margin-bottom: 1.25rem;;
+        font-size: 1.25rem;
+        color: $black-title;
+    }
+}
+
+#equipements-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    li {
+        width: 48%;
+        padding: 0.75rem $spacing-base;
+        background-color: white;
+        border: 1px solid $grey-border;
+        border-radius: 16px;
+        font-size: $text-base;
+    }
+    .wrapper {
+        @include icon-text;
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+/* Bloc bleu décrivant les capacité */
+#capacity {
+    padding: $spacing-lg;
+    border: 1px solid $blue-secd;
+    border-radius: 16px;
+    background-color: #f0f9ff;
+    h3 {
+        margin-bottom: 0.75rem;
+        color: $black-title;
+        font-size: 1rem;
+    }
+}
+.infos-capacity {
+    align-items: flex-start;
+    display: flex;
+    gap: 1rem;
+    img {
+        width: 16px;
+        height: 16px;
+        margin-top: 0.2rem;
+    }
+    .capacity-text{
+        p {
+            color: $grey-scd;
+            line-height: 1.6;
+            font-size: $text-base;
+        }
+        span {
+            font-weight: 700;
+            color: $black-title;
+        }
+    }
+}
+
+/* ===================
+    BLOC DES TARIFS A DROITE
+=================== */
+
+#pricing {
+    width: 32%;
+    padding: $spacing-lg;
+    background-color: white;
+    border: 1px solid $grey-border;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 8%);
+    h3 {
+        margin-bottom: $spacing-lg;
+        font-size: 1rem;
+        color: $black-title;
+    }
+    ul {
+        margin-bottom: $spacing-xl;
+    }
+    li {
+        @include icon-text;
+        justify-content: space-between;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid $grey-border;
+        color: $grey-scd;
+        font-size: $text-base;
+        &:last-child {
+            border-bottom: none;
+            color: $black-title;
+            font-weight: 600;
+        }
+        span {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: $black-title;
+        }
+        &:last-child span {
+            color: $blue-secd;
+            font-size: 1.3rem;
+        }
+    }
+
+    /* Icône + libellé du tarif */
+    .wrapper {
+        @include icon-text;
+        img {
+            width: 14px;
+            height: 14px;
+        }
+    }
+    /* Bouton favoris */
+    button {
+        width: 100%;
+        min-height: 48px;
+        padding: 0.75rem 0;
+        margin-bottom: 0.75rem;
+        border-radius: 16px;
+        //Si déjà en favoris
+        //border: 1px solid #FF637E;
+        //background-color: #fff1f3;
+        //color: #EC003F;
+        //Si pas en favoris
+        border: 1px solid $grey-border;
+        background-color: white;
+        color: $grey-dark;
+        font-size: $text-base;
+        font-weight: 600;
+        cursor: pointer;
+        @include flex-center;
+        gap: $spacing-sm;
+        &:hover{
+            //Si déjà en favoris
+            //background-color: #FFe4e6;
+            //Si pas en favoris
+            background-color: #F0F9FF;
+            border-color: $blue-secd;
+            color: $blue-secd;
+        }
+        img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    /* Bouton contact */
+    .contact-btn {
+        width: 100%;
+        min-height: 48px;
+        margin-bottom: $spacing-base;
+        box-shadow: 0 6px 12px rgb(2 132 199 / 25%);
+        @include flex-center;
+        gap: $spacing-sm;
+
+        img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+    /* Texte sous les boutons */
+    > p {
+        text-align: center;
+        color: $grey-color;
+        font-size: $text-sm;
+    }
+}
+

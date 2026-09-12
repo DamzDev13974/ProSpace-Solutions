@@ -44,6 +44,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #F8FAFC;
 }
 
 main {
@@ -643,7 +644,7 @@ footer .container {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* L'image de la oupe */
+  /* L'image de la loupe */
 }
 .grid-space > .container .no-result .no-result-icon {
   display: flex;
@@ -670,6 +671,358 @@ footer .container {
 }
 
 /* Variables et mixins */
+/* ===================
+    ARIANE
+=================== */
+.ariane > .container {
+  padding: 2rem 1.5rem 0;
+}
+
+/* Fil d'ariane */
+.nav-ariane {
+  margin-bottom: 2rem;
+}
+.nav-ariane ul {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav-ariane li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+.nav-ariane li:nth-child(2) {
+  color: #62748E;
+}
+.nav-ariane li:nth-child(3) {
+  color: #0F172A;
+}
+.nav-ariane a {
+  color: #90A1B9;
+  font-size: 1rem;
+}
+.nav-ariane img {
+  width: 14px;
+  height: 14px;
+}
+
+/* Titre de l'espace  */
+#space-title > h1 {
+  margin-bottom: 0.75rem;
+  color: #0F172A;
+  font-size: 2.25rem;
+  font-weight: 800;
+}
+
+.space-adresse {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 1.75rem;
+  /* Adresse */
+}
+.space-adresse .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.space-adresse .wrapper img {
+  width: 15px;
+  height: 15px;
+}
+.space-adresse .wrapper p {
+  color: #62748E;
+  font-size: 0.75rem;
+}
+.space-adresse {
+  /* Notes et avis */
+}
+.space-adresse .stars-note-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+.space-adresse .stars-note-details .nb-stars {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  gap: 0.2rem;
+}
+.space-adresse .stars-note-details .nb-stars img {
+  width: 13px;
+  height: 13px;
+}
+.space-adresse .stars-note-details .nb-stars p {
+  color: #0F172A;
+  font-weight: bold;
+}
+.space-adresse .stars-note-details > p {
+  color: #90A1B9;
+  font-size: 0.875rem;
+}
+
+/* ===================
+   GALERIE 
+=================== */
+.space-gallery {
+  margin-bottom: 3rem;
+}
+.space-gallery .container {
+  display: flex;
+  gap: 0.5rem;
+  height: 400px;
+  padding: 0 1.5rem;
+}
+.space-gallery img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.space-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Image principale à gauche */
+#gallery-main {
+  width: 67%;
+  overflow: hidden;
+  border-radius: 16px 0 0 16px;
+}
+
+/* Images secondaires à droite */
+#gallery-side {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* Image secondaire du haut */
+}
+#gallery-side .gallery-side-top {
+  height: 65%;
+  overflow: hidden;
+  border-radius: 0 16px 0 0;
+}
+#gallery-side {
+  /* Image secondaire du bas */
+}
+#gallery-side .gallery-side-bottom {
+  height: 35%;
+  overflow: hidden;
+  border-radius: 0 0 16px 0;
+}
+
+/* ===================
+    DÉTAILS
+=================== */
+.space-details {
+  padding-bottom: 6rem;
+}
+.space-details .space-details-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Colonne principale à gauche */
+.space-details-main {
+  width: 68%;
+}
+
+/* Bloc description */
+#about-space {
+  margin-bottom: 2.5rem;
+}
+#about-space h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #0F172A;
+}
+#about-space p {
+  color: #45556C;
+}
+
+/* Partie pour listing des équipements */
+.equipements {
+  margin-bottom: 2.5rem;
+}
+.equipements h2 {
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  color: #0F172A;
+}
+
+#equipements-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+#equipements-list li {
+  width: 48%;
+  padding: 0.75rem 1rem;
+  background-color: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  font-size: 0.875rem;
+}
+#equipements-list .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#equipements-list .wrapper img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Bloc bleu décrivant les capacité */
+#capacity {
+  padding: 1.5rem;
+  border: 1px solid #0284C7;
+  border-radius: 16px;
+  background-color: #f0f9ff;
+}
+#capacity h3 {
+  margin-bottom: 0.75rem;
+  color: #0F172A;
+  font-size: 1rem;
+}
+
+.infos-capacity {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+}
+.infos-capacity img {
+  width: 16px;
+  height: 16px;
+  margin-top: 0.2rem;
+}
+.infos-capacity .capacity-text p {
+  color: #62748E;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+.infos-capacity .capacity-text span {
+  font-weight: 700;
+  color: #0F172A;
+}
+
+/* ===================
+    BLOC DES TARIFS A DROITE
+=================== */
+#pricing {
+  width: 32%;
+  padding: 1.5rem;
+  background-color: white;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+#pricing h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #0F172A;
+}
+#pricing ul {
+  margin-bottom: 2rem;
+}
+#pricing li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #E2E8F0;
+  color: #62748E;
+  font-size: 0.875rem;
+}
+#pricing li:last-child {
+  border-bottom: none;
+  color: #0F172A;
+  font-weight: 600;
+}
+#pricing li span {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0F172A;
+}
+#pricing li:last-child span {
+  color: #0284C7;
+  font-size: 1.3rem;
+}
+#pricing {
+  /* Icône + libellé du tarif */
+}
+#pricing .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#pricing .wrapper img {
+  width: 14px;
+  height: 14px;
+}
+#pricing {
+  /* Bouton favoris */
+}
+#pricing button {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 0;
+  margin-bottom: 0.75rem;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  background-color: white;
+  color: #45556C;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#pricing button:hover {
+  background-color: #F0F9FF;
+  border-color: #0284C7;
+  color: #0284C7;
+}
+#pricing button img {
+  width: 18px;
+  height: 18px;
+}
+#pricing {
+  /* Bouton contact */
+}
+#pricing .contact-btn {
+  width: 100%;
+  min-height: 48px;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 12px rgba(2, 132, 199, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+#pricing .contact-btn img {
+  width: 18px;
+  height: 18px;
+}
+#pricing {
+  /* Texte sous les boutons */
+}
+#pricing > p {
+  text-align: center;
+  color: #90A1B9;
+  font-size: 0.75rem;
+}
+
 /* Variables et mixins */
 /* Variables et mixins */
 

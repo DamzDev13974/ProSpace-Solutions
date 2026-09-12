@@ -4,7 +4,7 @@
 /* =========================================================================
 -initEspaces() : récupère et affiche les informations de l'espace correspondant à l'id de l'URL
 -updateSeo(espace): met à jour le titre et la meta description selon l'espace affiché
--afficherSectionArianne(espace): affiche les élements nécessaire à la section arianne de la page
+-afficherSectionariane(espace): affiche les élements nécessaire à la section ariane de la page
 -afficherSectionGallery(espace): affiche les élements nécessaire à la section gallery de la page
 =========================================================================== */
 
@@ -35,7 +35,7 @@ async function initEspace(){
     //Maj du head
     updateSeo(espace);
     //J'affiche l'entete des détails
-    afficherSectionArianne(espace);
+    afficherSectionariane(espace);
     //J'affiche les images de l'espace
     afficherSectionGallery(espace);
     //J'affiche les détails de l'espace
@@ -57,14 +57,14 @@ function updateSeo(espace){
     metaDescription.setAttribute("content", espace.metaDescription);
 }
 
-function afficherSectionArianne(espace){
-    //Role : affiche les élements nécessaire à la section arianne de la page
+function afficherSectionariane(espace){
+    //Role : affiche les élements nécessaire à la section ariane de la page
     //Paramètres:
     //      espace : objet contenant les informations de l'espace
     //Retour : néant
 
-    //Je récupère les emplacements du fil d'arianne
-    const quartier = document.getElementById("liste-arianne");
+    //Je récupère les emplacements du fil d'ariane
+    const quartier = document.getElementById("liste-ariane");
     //Je récupère les emplacements pour le titre
     const titleSpace = document.getElementById("space-title");
     //Je crée l'html pour ces emplacements
@@ -92,13 +92,13 @@ function afficherSectionArianne(espace){
                 <img src="../assets/img/icon/gps.svg" alt="">
                 <p>${espace.adresse}</p>
             </div>
-            <div class="stars-note">
+            <div class="stars-note-details">
                 <div class="nb-stars">
                     <!-- à gérer via fonction pour calculer par rapport à la note -->
                     <img src="../assets/img/icon/star.svg" alt="">
-                    <p>${espace.nombreAvis} avis</p>
+                    <p>${espace.note}</p>
                 </div>
-                <p><span>.</span> ${espace.note}</p>
+                <p>.${espace.nombreAvis} avis vérifiés</p>
             </div>
         </div>
     `;
@@ -119,8 +119,12 @@ function afficherSectionGallery(espace){
         <img src="../${espace.images[0]}" alt="Espace de travail ${espace.nom}">
     `;
     gallerySide.innerHTML = `
-        <img src="../${espace.images[1]}" alt="Vue de l'espace ${espace.nom}">
-        <img src="../${espace.images[2]}" alt="Vue de l'espace ${espace.nom}">
+        <div class="gallery-side-top">
+            <img src="../${espace.images[1]}" alt="Vue de l'espace ${espace.nom}">
+        </div>
+        <div class="gallery-side-bottom">
+            <img src="../${espace.images[2]}" alt="Vue de l'espace ${espace.nom}">
+        </div>
     `;
 }
 
@@ -158,8 +162,10 @@ function afficherSectionDetails(espace){
         <h3>Capacité & Configuration</h3>
         <div class="infos-capacity wrapper">
             <img src="../assets/img/icon/person.svg" alt="">
-            <p>jusqu'à <span>${espace.capacite} personnes</span></p>
-            <p>Configuration modulable : théâtre, classe, U, boardroom — sur demande.</p>
+            <div class="capacity-text">
+                <p>Jusqu'à <span>${espace.capacite} personnes</span></p>
+                <p>Configuration modulable : théâtre, classe, U, boardroom — sur demande.</p>
+            </div>
         </div>
     `;
     pricing.innerHTML= `
@@ -168,33 +174,34 @@ function afficherSectionDetails(espace){
             <li>
                 <div class="wrapper">
                     <img src="../assets/img/icon/clock-uncolor.svg" alt="">
-                    <p>À l'heure</p>
+                    À l'heure   
                 </div>
                 <span>${espace.tarifs.heure} €</span>
             </li>
             <li>
                 <div class="wrapper">
                     <img src="../assets/img/icon/clock-uncolor.svg" alt="">
-                    <p>Demi-journée (4h)</p>
+                    Demi-journée (4h)      
                 </div>
                 <span>${espace.tarifs.demiJournee} €</span>
             </li>
             <li>
                 <div class="wrapper">
-                    <img src="../assets/img/icon/clock-uncolor.svg" alt="">
-                    <p>Journée complète</p>
+                    <img src="../assets/img/icon/clock.svg" alt="">
+                    Journée complète       
                 </div>
                 <span>${espace.tarifs.journee} €</span>
             </li>
         </ul>
-        <button type="button" onclick="addOrRemoveFavori(${espace.id})">
+        <button type="button"  onclick="addOrRemoveFavori(${espace.id})">
             <img src="../assets/img/icon/hearth-uncolor.svg" alt="">
-            Sauvegarder
+            Sauvegarder en favoris
         </button>
-        <div class="wrapper">
+        <a href="contact.html" class="btn-primary contact-btn" aria-label="Aller sur la page contact" title="Aller sur la page contact">
             <img src="../assets/img/icon/tel.svg" alt="">
-            <a href="contact.html" aria-label="Aller sur la page contact" title="Aller sur la page contact">Contacter l'équipe</a>
-        </div>    
+            Contacter l'équipe
+        </a>
+        <p>Réponse garantie sous 2h ouvrées · Sans engagement</p>    
     `;
 }
 
