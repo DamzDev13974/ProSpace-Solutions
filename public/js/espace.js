@@ -173,29 +173,44 @@ function afficherSectionDetails(espace){
     `;
     pricing.innerHTML= `
         <h3>Tarifs</h3>
-        <ul>
-            <li>
-                <div class="wrapper">
-                    <img src="../assets/img/icon/clock-uncolor.svg" alt="">
-                    À l'heure   
-                </div>
-                <span>${espace.tarifs.heure} €</span>
-            </li>
-            <li>
-                <div class="wrapper">
-                    <img src="../assets/img/icon/clock-uncolor.svg" alt="">
-                    Demi-journée (4h)      
-                </div>
-                <span>${espace.tarifs.demiJournee} €</span>
-            </li>
-            <li>
-                <div class="wrapper">
-                    <img src="../assets/img/icon/clock.svg" alt="">
-                    Journée complète       
-                </div>
-                <span>${espace.tarifs.journee} €</span>
-            </li>
-        </ul>
+        <table class="pricing-table">
+            <caption>Tarifs de l'espace ${espace.nom}</caption>
+            <thead>
+                <tr>
+                    <th>Durée</th>
+                    <th>Tarif</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="wrapper">
+                            <img src="../assets/img/icon/clock-uncolor.svg" alt="">
+                            À l'heure
+                        </div>
+                    </td>
+                    <td>${espace.tarifs.heure} €</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="wrapper">
+                            <img src="../assets/img/icon/clock-uncolor.svg" alt="">
+                            Demi-journée (4h)
+                        </div>
+                    </td>
+                    <td>${espace.tarifs.demiJournee} €</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="wrapper">
+                            <img src="../assets/img/icon/clock.svg" alt="">
+                            Journée complète
+                        </div>
+                    </td>
+                    <td>${espace.tarifs.journee} €</td>
+                </tr>
+            </tbody>
+        </table>
         <button type="button" id="favorite-detail-btn" onclick="addOrRemoveFavori(${espace.id}); updateBoutonFavori(${espace.id})">
             <img src="../assets/img/icon/hearth-uncolor.svg" alt="">
             Sauvegarder en favoris

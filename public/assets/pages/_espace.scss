@@ -251,34 +251,52 @@
     h3 {
         margin-bottom: $spacing-lg;
         font-size: 1rem;
+        font-weight: bold;
         color: $black-title;
     }
-    ul {
+    /* Tableau des tarifs */
+    .pricing-table {
+        width: 100%;
         margin-bottom: $spacing-xl;
-    }
-    li {
-        @include icon-text;
-        justify-content: space-between;
-        padding: 0.75rem 0;
-        border-bottom: 1px solid $grey-border;
-        color: $grey-scd;
-        font-size: $text-base;
-        &:last-child {
-            border-bottom: none;
-            color: $black-title;
-            font-weight: 600;
+        border-collapse: collapse;
+        /* Titre du tableau masqué visuellement mais présent pour l'accessibilité */
+        caption {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
         }
-        span {
+        thead {
+            display: none;
+        }
+        tr {
+            border-bottom: 1px solid $grey-border;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        td {
+            padding: 0.75rem 0;
+            color: $grey-scd;
+            font-size: $text-base;
+        }
+        /* Colonne du tarif */
+        td:last-child {
+            text-align: right;
             font-size: 1.25rem;
             font-weight: 700;
             color: $black-title;
         }
-        &:last-child span {
+        /* Dernière ligne : journée complète */
+        tr:last-child td {
+            color: $black-title;
+            font-weight: 600;
+        }
+        tr:last-child td:last-child {
             color: $blue-secd;
             font-size: 1.3rem;
         }
     }
-
     /* Icône + libellé du tarif */
     .wrapper {
         @include icon-text;

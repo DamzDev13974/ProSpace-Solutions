@@ -1113,32 +1113,55 @@ footer .container {
 #pricing h3 {
   margin-bottom: 1.5rem;
   font-size: 1rem;
+  font-weight: bold;
   color: #0F172A;
 }
-#pricing ul {
-  margin-bottom: 2rem;
+#pricing {
+  /* Tableau des tarifs */
 }
-#pricing li {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  justify-content: space-between;
-  padding: 0.75rem 0;
+#pricing .pricing-table {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-collapse: collapse;
+  /* Titre du tableau masqué visuellement mais présent pour l'accessibilité */
+}
+#pricing .pricing-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+#pricing .pricing-table thead {
+  display: none;
+}
+#pricing .pricing-table tr {
   border-bottom: 1px solid #E2E8F0;
+}
+#pricing .pricing-table tr:last-child {
+  border-bottom: none;
+}
+#pricing .pricing-table td {
+  padding: 0.75rem 0;
   color: #62748E;
   font-size: 0.875rem;
 }
-#pricing li:last-child {
-  border-bottom: none;
-  color: #0F172A;
-  font-weight: 600;
+#pricing .pricing-table {
+  /* Colonne du tarif */
 }
-#pricing li span {
+#pricing .pricing-table td:last-child {
+  text-align: right;
   font-size: 1.25rem;
   font-weight: 700;
   color: #0F172A;
 }
-#pricing li:last-child span {
+#pricing .pricing-table {
+  /* Dernière ligne : journée complète */
+}
+#pricing .pricing-table tr:last-child td {
+  color: #0F172A;
+  font-weight: 600;
+}
+#pricing .pricing-table tr:last-child td:last-child {
   color: #0284C7;
   font-size: 1.3rem;
 }
