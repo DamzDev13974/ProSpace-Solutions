@@ -75,6 +75,13 @@
         font-size: $text-base;
         color: $grey-color;
     }
+    .wrapper{
+        @include icon-text;
+        img{
+            width: 13px;
+            height: 13px;
+        }
+    }
 }
 
 /* ==================== 

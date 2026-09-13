@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez ProSpace Solutions pour obtenir des informations, poser vos questions ou être accompagné dans la recherche de votre espace de travail professionnel.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../assets/img/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../assets/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+    <link rel="apple-touch-icon" href="../assets/img/favicon/apple-touch-icon.png">
+    <title>Contactez notre équipe | ProSpace Solutions</title>
+</head>
+<body>
+    <header>
+        <!-- HEADER avec le nombre de favoris changeant dynamiquement -->
+        <div class="container header-content">
+            <div class="logo-header">
+                <div class="logo-icon">
+                    <img src="../assets/img/icon/prospace-logo.svg" alt="Logo ProSpace - Solutions">
+                </div>
+                <a href="../../index.html" aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">ProSpace <span>Solutions</span></a>
+            </div>
+            <nav class="nav-header">
+                <ul>
+                    <li>
+                        <a href="../../index.html"  aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="../pages/mes-espaces.html"  aria-label="Aller sur la page des mes espaces favoris" title="Aller sur la page des mes espaces favoris">Mes espaces <span id="nb-favorite"></span></a>
+                    </li>
+                    <li>
+                        <a href="../pages/contact.html" class="active" aria-label="Aller sur la page contact" title="Aller sur la page contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Section HERO / BANNER sans affichage dynamique -->
+        <section class="hero-contact">
+            <div class="container">
+                <div class="hero-contact-content">
+                    <div class="badge wrapper">
+                        <img src="../assets/img/icon/message.svg" alt="">
+                        <p>nous écire</p>
+                    </div>
+                    <h1>Contacter nos équipes</h1>
+                    <p>Une question, une demande de devis ou un projet à discuter ? Notre équipe vous répond sous 2h ouvrées.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Section du formulaire dynamioue et infos entreprise  -->
+        <section class="infos-contact">
+            <div class="container form-content">
+                <div class="title-form">
+                    <h2>Formulaire de contact</h2>
+                    <span>* Champs obligatoires</span>
+                </div>
+                <!-- Partie à gauche formulaire -->
+                <form class="form-contact">
+                    <div class="top-form">
+                        <div class="form-group">
+                            <label for="name">nom complet *</label>
+                            <input type="text" name="name" id="name" aria-describedby="name-error">
+                            <span id="name-error" class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">email professionnel *</label>
+                            <input type="email" name="email" id="email" aria-describedby="email-error">
+                            <span id="email-error" class="error-message"></span>
+                        </div>
+                    </div>
+                    <div class="comapny-phone">
+                        <div class="form-group">
+                            <label for="company">entrprise *</label>
+                            <input type="text" name="company" id="company" aria-describedby="company-error">
+                            <span id="company-error" class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">téléphone</label>
+                            <input type="tel" name="phone" id="phone" aria-describedby="phone-error">
+                            <span id="phone-error" class="error-message"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">sujet</label>
+                        <select name="subject" id="subject" aria-describedby="subject-error">
+                            <option value="">Sélectionnez un sujet...</option>
+                            <option value="information">Demande d'information</option>
+                            <option value="devis">Demande de devis</option>
+                            <option value="reservation">Réservation</option>
+                            <option value="partenariat">Partenariat</option>
+                            <option value="reclamation">Réclamation</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                        <span id="subject-error" class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">message *</label>
+                        <textarea name="message"id="message" placeholder="Décrivez votre projet ou votre question..."aria-describedby="message-error"></textarea>
+                        <span id="message-error" class="error-message"></span>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" name="privacy" id="privacy" aria-describedby="privacy-error">
+                        <label for="privacy">
+                            J'accepte que mes données personnelles soient traitées conformément à la
+                            <a href="#">politique de confidentialité de ProSpace Solutions</a>.
+                        </label>
+                        <span id="privacy-error" class="error-message"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-contact">
+                        <img src="../assets/img/icon/send.svg" alt="">
+                        Envoyer le message
+                    </button>
+                </form>
+                <!-- Aside informations -->
+                <aside class="aside-contact">
+                    <h2>ProSpace Solutions</h2>
+                    <p>informations entrprise</p>
+                    <!-- Bloc infos de ProSpace  -->
+                    <div class="company">
+                        <div class="info-contact-wrapper">
+                            <div class="img-info">
+                                <img src="../assets/img/icon/gps.svg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p>adresse</p>
+                                <p>14 Avenue de Wagram 75008 Paris</p>
+                            </div>
+                        </div>
+                        <div class="info-contact-wrapper">
+                            <div class="img-info">
+                                <img src="../assets/img/icon/gps.svg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p>téléphone</p>
+                                <p>+33 1 42 56 78 90</p>
+                            </div>
+                        </div>
+                        <div class="info-contact-wrapper">
+                            <div class="img-info">
+                                <img src="../assets/img/icon/letter.svg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p>email</p>
+                                <p>contact@prospace-solutions.fr</p>
+                            </div>
+                        </div>
+                        <div class="info-contact-wrapper">
+                            <div class="img-info">
+                                <img src="../assets/img/icon/clock.svg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p>horaires</p>
+                                <p>Lun - Ven : 9h00 - 18h00</p>
+                            </div>
+                        </div>
+                        <div class="info-contact-wrapper">
+                            <div class="img-info">
+                                <img src="../assets/img/icon/clock.svg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p>présence</p>
+                                <p>6 villes en France</p>
+                            </div>
+                        </div>
+                        <div class="info-contact-wrapper">
+                            <div class="img-info">
+                                <img src="../assets/img/icon/clock.svg" alt="">
+                            </div>
+                            <div class="text-info">
+                                <p>siret</p>
+                                <p>853 204 119 00024</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Infos sur les garanties de reponses -->
+                    <div class="guarantee">
+                        <div class="img-info">
+                            <img src="../assets/img/icon/clock.svg" alt="">
+                        </div>
+                        <div class="text-info">
+                            <p>Réponse rapide garantie</p>
+                            <p>Notre équipe s'engage à vous répondre sous <span>2 heures ouvrées</span>. Pour les urgences, appelez le +33 1 42 56 78 90.</p>
+                        </div>
+                    </div>
+                    <!-- Testimonials -->
+                    <div class="user-review">
+                         <div class="review-note">
+                            <div class="nb-stars">
+                                <img src="../assets/img/icon/star.svg" alt="">
+                                <img src="../assets/img/icon/star.svg" alt="">
+                                <img src="../assets/img/icon/star.svg" alt="">
+                                <img src="../assets/img/icon/star.svg" alt="">
+                                <img src="../assets/img/icon/star.svg" alt="">
+                            </div>
+                            <p>4.8 / 5</p>
+                        </div>
+                        <blockquote>
+                            <p>"L'équipe ProSpace est réactive et à l'écoute. Notre réservation a été confirmée en moins d'une heure, parfait pour notre séminaire de dernière minute."</p>
+                        </blockquote>
+                        <p>— Charlotte M., DAF chez Nexeo Group</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+        <section class="team">
+            <div class="container">
+                <p>l'équipe</p>
+                <h2>Des experts à votre service</h2>
+                <p>Une équipe de professionnels passionnés, disponibles pour vous accompagner dans tous vos projets d'espaces de travail</p>
+                <div class="carousel">
+                    <!-- Test par JS -->
+                    <div class="carousel-controls">
+                        <!-- à faire une fois sur la mise en page du carousel -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section pour l'adresse de l'entreprise -->
+        <section class="location">
+            <div class="container location-card">
+                <div class="img-info">
+                    <img src="../assets/img/icon/gps.svg" alt="">
+                </div>
+                <p>14 Avenue de Wagram, 75008 Paris</p>
+                <p>Siège social · Ligne 2 & 6 — Wagram · RER C — Invalides</p>
+                <div class="wrapper">
+                    <img src="../assets/img/icon/web.svg" alt="">
+                    <a href="https://maps.app.goo.gl/C4T1YoxrQe4xmH1h7" aria-label="Voir la localisation de ProSpace sur google map" title="Voir la localisation de ProSpace sur google map">Voir sur Google Maps</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- partie du FOOTER sans changement dynamique -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <div class="logo-footer">
+                        <div class="logo-footer-icon">
+                            <img src="../assets/img/icon/prospace-logo.svg" alt="Logo ProSpace - Solutions">
+                        </div>
+                        <p>ProSpace <span>Solutions</span></p>
+                    </div>
+                    <p>Location d'espaces professionnels en France pour les entreprises et indépendants exigeants</p>
+                    <div class="wrapper">
+                        <img src="../assets/img/icon/letter.svg" alt="">
+                        <a href="contact.html" aria-label="Aller sur la page de contact" title="Aller sur la page de contact ">Nous contacter</a>
+                    </div>
+                </div>
+                <nav class="nav-footer">
+                    <h2>destinations</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Espaces à Paris</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Lyon</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Bordeaux</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Nantes</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Marseille</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Toulouse</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces à Lille</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="nav-footer">
+                    <h2>services</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Salles de réunion</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces de coworking</a>
+                        </li>
+                        <li>
+                            <a href="#">Salles de formations</a>
+                        </li>
+                        <li>
+                            <a href="#">Bureaux privatifs</a>
+                        </li>
+                        <li>
+                            <a href="#">Studios visio</a>
+                        </li>
+                        <li>
+                            <a href="#">Espaces événements</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="nav-footer">
+                    <h2>légal et & accés</h2>
+                    <ul>
+                        <li>
+                            <a href="#">Mentions légales</a>
+                        </li>
+                        <li>
+                            <a href="#">CGU & CGV</a>
+                        </li>
+                        <li>
+                            <a href="#">Politique de confidentialité</a>
+                        </li>
+                        <li>
+                            <a href="#">Gestion des cookies</a>
+                        </li>
+                        <li>
+                            <a href="#">Déclaration d'accésibilité</a>
+                        </li>
+                        <li>
+                            <a href="#">Sitemap</a>
+                        </li> 
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-legal">
+                <p>© 2025 ProSpace Solutions SAS — Tous droits réservés</p>
+                <p>Conformité RGAA 4.1 · Accessibilité : partiellement conforme</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+</body>
+</html>

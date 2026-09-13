@@ -659,7 +659,7 @@ footer .container {
   gap: 0.5rem;
   padding: 0.375rem 0.75rem;
   margin-bottom: 1.25rem;
-  background-color: #172A41;
+  background-color: color-mix(in oklab, #38BDF8 10%, transparent);
   color: #38BDF8;
   border: 1px solid #0284C7;
   border-radius: 20px;
@@ -1315,6 +1315,15 @@ footer .container {
 .no-result p {
   font-size: 0.875rem;
   color: #90A1B9;
+}
+.no-result .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.no-result .wrapper img {
+  width: 13px;
+  height: 13px;
 }
 
 /* ==================== 

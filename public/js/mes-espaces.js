@@ -55,9 +55,9 @@ function afficherFavoris(favorisSave){
                 </div>
                 <h3>Aucun espace sauvegardé</h3>
                 <p>Ajoutez des espaces à vos favoris depuis le</p>
-                <div class="wrapper>
-                    <img src="../assets/img/icon/hearth-uncolor.svg" alt="">
+                <div class="wrapper">
                     <p>catalogue en cliquant sur l'icône</p>
+                    <img src="../assets/img/icon/hearth-uncolor.svg" alt="">
                 </div>
             </li>
         `;

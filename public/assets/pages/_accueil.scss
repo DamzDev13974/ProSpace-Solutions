@@ -55,7 +55,7 @@
     gap: $spacing-sm;
     padding: 0.375rem 0.75rem;
     margin-bottom: 1.25rem;
-    background-color: #172A41;
+    background-color: color-mix(in oklab, #38BDF8 10%, transparent);
     color: $blue-prim;
     border: 1px solid $blue-secd;
     border-radius: 20px;
