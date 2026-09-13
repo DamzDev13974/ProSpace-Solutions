@@ -98,8 +98,7 @@ function afficherSectionariane(espace){
             </div>
             <div class="stars-note-details">
                 <div class="nb-stars">
-                    <!-- à gérer via fonction pour calculer par rapport à la note -->
-                    <img src="../assets/img/icon/star.svg" alt="">
+                    ${afficherEtoiles(espace.note,"../assets/img/icon/")}
                     <p>${espace.note}</p>
                 </div>
                 <p>.${espace.nombreAvis} avis vérifiés</p>

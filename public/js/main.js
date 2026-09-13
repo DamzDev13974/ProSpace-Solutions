@@ -6,6 +6,7 @@
 -getFavoris():  récupère la liste des favoris enregistrés dans le localStorage
 -updateNbFavoris(): met à jour le nombre de favoris affiché dans le badge du header
 -addOrRemoveFavori(idEspace): ajoute ou retire un espace des favoris
+-afficherEtoiles(note, cheminIcones): génère les étoiles pleines et vides selon la note
 =========================================================================== */
 
 async function getEspaces(url){
@@ -68,6 +69,21 @@ function updateNbFavoris(){
         nbFavoris.style.display = "flex";
         nbFavoris.textContent = favoris.length;
     }
+
+     //Je récupère le message de la page mes-espaces
+    const selectionMessage = document.getElementById("selection-message");
+    //Si l'élément existe, je suis sur la page mes-espaces
+    if (selectionMessage) {
+        //Si aucun favori n'est enregistré
+        if (favoris.length === 0) {
+            selectionMessage.textContent = "Votre sélection est vide";
+        }
+        else {
+            selectionMessage.innerHTML = `
+                <span id="nb-spaces-favorites">${favoris.length}</span> espaces dans votre sélection
+            `;
+        }
+    }
 }
 
 function addOrRemoveFavori(idEspace){
@@ -93,6 +109,31 @@ function addOrRemoveFavori(idEspace){
 
     //Je mets à jour le compteur du header
     updateNbFavoris();
+}
+
+function afficherEtoiles(note, cheminIcones){
+    //Role : génère les étoiles pleines et vides selon la note
+    //Paramètres:
+    //      note : note de l'espace sur 5
+    //      cheminIcones : chemin vers le dossier contenant les étoiles
+    //Retour : chaîne de caractères contenant les étoiles
+
+    let htmlEtoiles = "";
+    //Je récupère uniquement la partie entière de la note en arrondissant vers le bas
+    const etoilesPleines = Math.floor(note);
+    //J'affiche les étoiles pleines tant que la note est supérieure
+    for (let i = 0; i < etoilesPleines; i++) {
+        htmlEtoiles += `
+            <img src="${cheminIcones}star.svg" alt="">
+        `;
+    }
+    //Je complète jusqu'à 5 avec des étoiles vides
+    for (let i = etoilesPleines; i < 5; i++) {
+        htmlEtoiles += `
+            <img src="${cheminIcones}star-uncolor.svg" alt="">
+        `;
+    }
+    return htmlEtoiles;
 }
 
 

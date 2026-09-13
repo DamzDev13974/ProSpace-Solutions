@@ -88,7 +88,7 @@ function afficherEspaces(espaces){
             <article class="space-card">
                 <div class="img-card">
                     <img src="public/${espace.images[0]}" alt="Espace de travail ${espace.nom}">
-                    <button class="btn favorite-btn" type="button" onclick="addOrRemoveFavori(${espace.id});updateCoeurFavori(this, ${espace.id});" aria-label="Ajouter ${espace.nom} aux favoris">
+                    <button class="btn favorite-btn" type="button" onclick="addOrRemoveFavori(${espace.id});updateCoeurFavori(this, ${espace.id});" aria-label="${favoris.includes(espace.id) ? `Retirer ${espace.nom} des favoris`: `Ajouter ${espace.nom} aux favoris`}">
                         <img src="${favoris.includes(espace.id) ? "public/assets/img/icon/hearth.svg": "public/assets/img/icon/hearth-uncolor.svg"}" alt="">
                     </button>
                 </div>
@@ -100,8 +100,7 @@ function afficherEspaces(espaces){
                     </div>
                     <div class="stars-note">
                         <div class="nb-stars">
-                            <!-- à gérer via fonction pour calculer par rapport à la note -->
-                            <img src="public/assets/img/icon/star.svg" alt="">
+                            ${afficherEtoiles(espace.note, "public/assets/img/icon/")}
                         </div>
                         <p>${espace.note}</p>
                         <p>(${espace.nombreAvis} avis)</p>

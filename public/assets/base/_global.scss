@@ -8,6 +8,12 @@
     margin: 0 auto;
 }
 
+.container-narrow {
+    width: 90%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
 body {
     min-height: 100vh;
     display: flex;

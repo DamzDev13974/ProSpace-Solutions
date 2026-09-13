@@ -39,13 +39,13 @@
     <main>
         <section class="spaces-top">
             <!-- Partie haute de mes-espaces -->
-            <div class="container">
+            <div class="container-narrow">
                 <div class="spaces">
                     <div class="spaces-title">
                         <h1>Mes Espaces Sauvegardés</h1>
-                        <p><span id="nb-spaces-favorites"><!-- alimenter par Js et le json --></span> espaces dans votre sélection</p>
+                        <p id="selection-message"> <!-- alimenter par Js et le json --></p>
                     </div>
-                    <button type="button">
+                    <button type="button" id="clear-favorites" onclick="resetFavoris()";>
                         <img src="../assets/img/icon/trash.svg" alt="">
                         Vider ma sélection
                     </button>
@@ -53,8 +53,8 @@
             </div>
         </section>
         <section class="spaces-save">
-            <div class="container">
-                <ul class="saved-space-list">
+            <div class="container-narrow">
+                <ul id="saved-space-list">
                     <!-- alimenter par Js et le json -->
                 </ul>
             </div>
@@ -158,6 +158,6 @@
         </div>
     </footer>
     <script src="../js/main.js"></script>
-    <script src="../js/mes-espace.js"></script>
+    <script src="../js/mes-espaces.js"></script>
 </body>
 </html>
