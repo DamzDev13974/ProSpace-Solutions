@@ -221,7 +221,7 @@ formContact.addEventListener("submit", function(event){
     //J'empêche le rechargement de la page
     event.preventDefault();
     //Je récupère l'emplacement pour le message de confirmation
-    const formContent = document.getElementById("form-content");
+    const formContent = document.getElementById("form-card");
     //Je vérifie le formulaire et si il est valide j'affiche la div de confirmation à la place du formulaire
     if (validateForm()) {
         formContent.innerHTML = `

@@ -1,2 +1,351 @@
 @use "../abstracts/variables" as*;
 @use "../abstracts/mixins" as*;
+
+//Mise en page CSS de la page contact 
+
+/* =================== 
+    HERO  
+=====================*/
+.hero-contact {
+    padding: $spacing-3xl 0;
+    background-color: #0E2037;
+    color: white;
+    .hero-contact-content {
+       text-align: center;
+       padding: $spacing-lg;
+    }
+    /* Style badge déjà appliqué par la classe sur la page accueil */
+    h1 {
+        font-size: $spacing-2xl;
+        font-weight: 800;
+        margin-bottom: $spacing-base;
+        span {
+            color: $blue-prim;
+        }
+    }
+    >p {
+        color: $grey-txt;
+    }
+}
+
+/* ================= 
+    FORMULAIRE ET INFORMATIONS
+================= */
+
+#form-content {
+    display: flex;
+    gap: $spacing-xl;
+    padding: 4rem $spacing-lg;
+    align-items: flex-start;
+}
+
+/* Card du formulaire*/
+.form-card {
+    width: 58%;
+    padding: $spacing-lg;
+    background-color: white;
+    border: 1px solid $grey-border;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgb(15 23 42 / 5%);
+    .title-form {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $spacing-xl;
+        h2 {
+            font-size: 1.25rem;
+            color: $black-title;
+        }
+        span {
+            font-size: $text-sm;
+            color: $grey-color;
+        }
+    }
+}
+
+/* Formulaire*/
+.form-contact {
+    width: 100%;
+    .top-form, .company-phone {
+        display: flex;
+        gap: $spacing-base;
+        .form-group {
+            width: 50%;
+        }
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $spacing-base;
+        /* Style des labels */
+        label {
+            margin-bottom: 0.375rem;
+            font-size: $text-sm;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $black-title;
+        }
+        /* Style des champs */
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem $spacing-base;
+            border: 1px solid $grey-border;
+            border-radius: 16px;
+            font-size: $text-base;
+            color: $black-title;
+            outline: none;
+        }
+        /* Taille des champs */
+        input,select {
+            height: 46px;
+        }
+        textarea {
+            min-height: 146px;
+            resize: vertical;
+        }
+        /* Couleur du champs selectionné */
+        input:focus, select:focus, textarea:focus {
+            border-color: $blue-prim;
+            box-shadow: 0px 1px 15px -1px $blue-prim;
+;
+        }
+    }
+    /* Checkbox confidientialité */
+    .checkbox-group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: $spacing-sm;
+        input {
+            width: 16px;
+            height: 16px;
+            margin-top: 3px;
+        }
+        label {
+            flex: 1;
+            margin: 0;
+            font-size: $text-sm;
+            font-weight: 400;
+            line-height: 1.5;
+            text-transform: none;
+            /* Lien fictif pour confid */
+            a {
+                color: $blue-secd;
+                text-decoration: underline;
+            }
+        }
+        .error-message {
+            width: 100%;
+        }
+    }
+    /* Bouton validation du formulaire */
+    .submit-contact {
+        width: 100%;
+        @include flex-center;
+        gap: $spacing-sm;
+        padding: $spacing-base 0;
+        border: none;
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+/*  Messages d'erreur */
+.error-message {
+    min-height: 16px;
+    margin-top: 4px;
+    font-size: $text-sm;
+    color: #ec003f;
+}
+
+/* =================
+INFORMATIONS ENTREPRISE
+================= */
+
+.aside-contact {
+    width: 35%;
+    /* Bloc principal bleu */
+    .company {
+        padding: 1.75rem;
+        background-color: $blue-bkg;
+        border-radius: 16px;
+        h2 {
+            margin-bottom: 0.25rem;
+            color: white;
+            font-size: $text-md;
+        }
+        > p {
+            margin-bottom: $spacing-lg;
+            color: $blue-prim;
+            font-size: $text-sm;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+/* Pour chaque ligne d'infos*/
+.info-contact-wrapper {
+    display: flex;
+    align-items: center;
+    gap: $spacing-base;
+    margin-bottom: $spacing-base;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .img-info {
+        @include flex-center;
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        border-radius: 16px;
+        background-color: #1E293B;
+        img {
+            width: 18px;
+            height: 18px;
+        }
+    }
+    .text-info {
+        p:first-child {
+            margin-bottom: 3px;
+            color: $grey-color;
+            font-size: $text-sm;
+            text-transform: uppercase;
+        }
+        p:last-child {
+            color: white;
+            font-size: $text-base;
+            line-height: 1.5;
+        }
+    }
+}
+
+
+/* ================= 
+    GARANTIE DE RÉPONSE 
+================= */
+
+.guarantee {
+    display: flex;
+    gap: $spacing-base;
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background-color: #EAF7FF;
+    border: 1px solid $blue-prim;
+    border-radius: 16px;
+    .img-info {
+        @include flex-center;
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        border-radius: 50%;
+        background-color: white;
+        img {
+            width: 16px;
+            height: 16px;
+        }
+    }
+    .text-info {
+        p:first-child {
+            margin-bottom: $spacing-sm;
+            font-size: $text-base;
+            font-weight: 600;
+            color: $black-title;
+        }
+        p:last-child {
+            color: $grey-scd;
+            font-size: $text-sm;
+            line-height: 1.5;
+        }
+        span {
+            font-weight: 600;
+        }
+    }
+}
+
+
+/* ================= 
+    AVIS CLIENT 
+================ */
+
+.user-review {
+    margin-top: 1.25rem;
+    padding: 1.25rem;
+    background-color: white;
+    border: 1px solid $grey-border;
+    border-radius: 16px;
+    .review-note {
+        display: flex;
+        align-items: center;
+        gap: $spacing-base;
+        margin-bottom: $spacing-sm;
+        p {
+            font-weight: 700;
+            color: $black-title;
+        }
+    }
+    /* Etoile gérées via nb-stars */
+
+    blockquote {
+        margin-bottom: $spacing-sm;
+        p {
+            color: $grey-scd;
+            font-size: $text-sm;
+            font-style: italic;
+            line-height: 1.6;
+        }
+    }
+    > p {
+        font-size: $text-sm;
+        font-weight: 600;
+        color: $black-title;
+    }
+}
+
+/* ================= 
+    MESSAGE APRÈS ENVOI 
+================= */
+
+.success-message {
+    width: 100%;
+    //min-height: 500px;
+    @include flex-center;
+    flex-direction: column;
+    padding: $spacing-xl;
+    text-align: center;
+    .success-icon {
+        @include flex-center;
+        width: 80px;
+        height:80px;
+        margin-bottom: $spacing-lg;
+        border-radius: 50%;
+        background-color: #D1FAE5;
+        img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+    h2 {
+        margin-bottom: 0.75rem;
+        color: $black-title;
+        font-size: 1.5rem;
+    }
+    p {
+        max-width: 430px;
+        margin-bottom: $spacing-lg;
+        color: $grey-scd;
+        line-height: 1.6;
+        font-size: $text-base;
+        span {
+            font-weight: 700;
+            color: $grey-dark;
+        }
+    }
+    button {
+        padding: 0.8rem $spacing-lg;
+        border: none;
+    }
+}
