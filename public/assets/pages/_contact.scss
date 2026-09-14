@@ -233,7 +233,7 @@ INFORMATIONS ENTREPRISE
     gap: $spacing-base;
     margin-top: 1.25rem;
     padding: 1.25rem;
-    background-color: #EAF7FF;
+    background-color: #F0F9FF;
     border: 1px solid $blue-prim;
     border-radius: 16px;
     .img-info {
@@ -347,5 +347,76 @@ INFORMATIONS ENTREPRISE
     button {
         padding: 0.8rem $spacing-lg;
         border: none;
+    }
+}
+
+/* =================
+    SECTION EQUIPE
+================= */
+
+.team {
+    padding: 5rem 0;
+    background-color: white;
+    text-align: center;
+    > .container > p:first-child {
+        margin-bottom: $spacing-sm;
+        color: $blue-prim;
+        font-size: $text-sm;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2.4px;
+    }
+    h2 {
+        margin-bottom: $spacing-base;
+        color: $black-title;
+        font-size: 2.25rem;
+    }
+    > .container > p:nth-of-type(2) {
+        max-width: 650px;
+        margin: 0  auto $spacing-2xl ;
+        color: $grey-scd;
+        line-height: 1.6;
+    }
+}
+
+/* =================
+    SECTION LOCATION
+================= */
+
+.location-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    background-color: #F0F9FF;
+    min-height: 290px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+    .img-info{
+        @include flex-center;
+        width: 64px;
+        height: 64px;
+        background-color:  color-mix(in oklab, #0284C7 10%, transparent);
+        border-radius: 16px;
+        img{
+            width: 22px;
+            height: 22px;
+        }
+    }
+    p:first-of-type{
+        font-size: $text-base;
+        color: $black-title;
+        font-weight: 600;
+    }
+    p:last-of-type{
+        font-size: 1rem;
+        color: $grey-color;
+    }
+    .wrapper{
+        @include icon-text;
+        a{
+            color: $blue-secd;
+        }
     }
 }

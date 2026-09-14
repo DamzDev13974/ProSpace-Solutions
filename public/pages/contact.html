@@ -214,10 +214,18 @@
                 <h2>Des experts à votre service</h2>
                 <p>Une équipe de professionnels passionnés, disponibles pour vous accompagner dans tous vos projets d'espaces de travail</p>
                 <div class="carousel">
-                    <!-- Test par JS -->
+                    <!-- MAJ par JS -->
+                    <div id="team-cards" class="team-cards" aria-live="polite"></div>
+                    <!-- Contrôles du carrousel -->
                     <div class="carousel-controls">
-                        <!-- à faire une fois sur la mise en page du carousel -->
-                    </div>
+                        <button type="button" id="prev-team" class="carousel-btn" aria-label="Afficher l'employé précédent">
+                            <img src="../assets/img/icon/left-arrow.svg" alt="">
+                        </button>
+                        <!-- Div pour la cération des points et défilement du caroussel  -->
+                        <div id="carousel-dots" class="carousel-dots"></div>
+                        <button type="button" id="next-team" class="carousel-btn" aria-label="Afficher l'employé suivant">
+                            <img src="../assets/img/icon/right-arrow.svg" alt="">
+                        </button>                    
                 </div>
             </div>
         </section>
