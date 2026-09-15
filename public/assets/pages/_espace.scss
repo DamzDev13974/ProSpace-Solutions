@@ -361,6 +361,29 @@
     }
 }
 
+/* Message affiché lorsqu'un espace n'existe pas */
+.error-space {
+    padding: $spacing-3xl 0;
+    text-align: center;
+    .container {
+        background-color: white;
+        padding: $spacing-2xl;
+        border-radius: 12px;
+        border: 1px solid $grey-border;
+    }
+    h1 {
+        margin-bottom: $spacing-base;
+        color: $black-title;
+    }
+    p {
+        margin-bottom: $spacing-xl;
+        color: $grey-dark;
+    }
+    a{
+        padding: 0.5rem;
+    }
+}
+
 
 /* =================== RESPONSIVE =====================*/
 

@@ -8,6 +8,7 @@
 -afficherSectionGallery(espace): affiche les élements nécessaire à la section gallery de la page
 -afficherSectionDetails(espace): affiche les élements nécessaire à la section space-details de la page
 -updateBoutonFavori(idEspace): met à jour l'affichage du bouton favori selon l'état de l'espace
+-afficherErreurEspace(): affiche un message si l'espace demandé n'existe pas
 =========================================================================== */
 
 
@@ -27,12 +28,24 @@ async function initEspace(){
     //      néant
     //Retour : néant
 
+    //Je vérifie qu'un id est présent dans l'URL
+    if (!params.has("id") || idEspace === 0) {
+        afficherErreurEspace();
+        return;
+    }
+
     //Je récupère les données des espaces
     const espaces = await getEspaces(url);
     //Je recherche l'espace correspondant à l'id récupéré dans l'URL
     const espace = espaces.find(espace => {
         return espace.id === idEspace;
     });
+
+    //Si aucun espace ne correspond à l'id, j'affiche un message d'erreur
+    if (!espace) {
+        afficherErreurEspace();
+        return;
+    }
     
     //Maj du head
     updateSeo(espace);
@@ -249,6 +262,28 @@ function updateBoutonFavori(idEspace){
             Sauvegarder en favoris
         `;
     }
+}
+
+function afficherErreurEspace(){
+    //Role : affiche un message si l'espace demandé n'existe pas
+    //Paramètres:
+    //      néant
+    //Retour : néant
+
+    //Je récupère l'emplacement d'affichage et j'injecte l'html pour le message d'erreur 
+    const main = document.getElementById("error-id-space");
+    main.innerHTML = `
+        <section class="error-space">
+            <div class="container">
+                <h1>Espace introuvable</h1>
+                <p>L'espace demandé n'existe pas ou n'est plus disponible.</p>
+
+                <a href="../../index.html" class="btn btn-primary" aria-label="Aller sur la page d'accueil" title="Aller sur la page d'accueil">
+                    Retour à l'accueil
+                </a>
+            </div>
+        </section>
+    `;
 }
 
 

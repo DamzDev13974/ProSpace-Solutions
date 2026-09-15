@@ -1433,6 +1433,29 @@ footer .container {
   font-size: 0.75rem;
 }
 
+/* Message affiché lorsqu'un espace n'existe pas */
+.error-space {
+  padding: 3.5rem 0;
+  text-align: center;
+}
+.error-space .container {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+}
+.error-space h1 {
+  margin-bottom: 1rem;
+  color: #0F172A;
+}
+.error-space p {
+  margin-bottom: 2rem;
+  color: #45556C;
+}
+.error-space a {
+  padding: 0.5rem;
+}
+
 /* =================== RESPONSIVE =====================*/
 /* Tablette */
 @media (max-width: 1300px) {
