@@ -90,3 +90,23 @@ header {
 }
 
 
+/* ================= RESPONSIVE ================= */
+
+/* Mobile */
+@media (max-width: 640px) {
+    /* Utilisation de toute la largeur */
+    .header-content {
+        width: 100%;
+    }
+    /* Réduction de l'espace et aille du logo et son texte */
+    .logo-header {
+        gap: 0.25rem;
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+        }
+        a {
+            font-size: $text-base;
+        }
+    }
+}

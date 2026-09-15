@@ -103,3 +103,38 @@ footer{
         font-size: $text-sm;
     }
 }
+
+
+/* =================== RESPONSIVE =====================*/
+/* Mobile */
+@media (max-width: 664px) {
+    footer {
+        margin-top: $spacing-2xl;
+        .container {
+            width: 100%;
+            padding: $spacing-xl $spacing-base;
+        }
+    }
+    .footer-content {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: $spacing-xl;
+    }
+    /* Logo et description sur toute la largeur */
+    .footer-contact {
+        width: 100%;
+    }
+    /* Destinations et services restent côte à côte */
+    .nav-footer {
+        width: 45%;
+        /* La dernière navigation passe en dessous */
+        .nav-footer:last-child {
+            width: 100%;
+        }
+    }
+    .footer-legal {
+        flex-direction: column;
+        gap: $spacing-sm;
+        text-align: center;
+    }
+}

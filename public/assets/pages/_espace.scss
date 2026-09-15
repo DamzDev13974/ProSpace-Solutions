@@ -361,3 +361,32 @@
     }
 }
 
+
+/* =================== RESPONSIVE =====================*/
+
+
+/* Tablette */
+@media (max-width: 1300px){
+    /* Suppression de la marge latérale */
+    .ariane>.container, .space-gallery>.container, .space-details-content{
+        width: 100%;
+    }
+}
+
+@media (max-width: 1022px){
+    /* L'aside des tarif passe en dessous */
+    .space-details-content{
+        flex-direction: column;
+        .space-details-main, #pricing{
+            width: 100%;
+        }
+    }
+}
+
+/* Mobile */
+@media (max-width: 635px){
+    /* La liste des equipements passe à un equipement par ligne */
+    #equipements-list li{
+        width: 100%;
+    }
+}

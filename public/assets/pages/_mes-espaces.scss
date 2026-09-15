@@ -98,3 +98,46 @@
     margin-top: 2.5rem;
 }
 
+/* =================== RESPONSIVE =====================*/
+
+/* Tablette */
+
+@media (max-width: 1030px){
+    /* Suppression de la marge latérale */
+    .container-narrow{
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .space-save-card {
+        height: auto;
+        min-height: 180px;
+        .img-save-card {
+            width: 38%;
+            height: auto;
+        }
+        /* Les informations et les boutons passent en colonne */
+        .save-card-content {
+            width: 62%;
+            flex-direction: column;
+                .content-save {
+                width: 100%;
+            }
+        }
+        /* La ligne capacité / tarif / note revient à la ligne */
+        .wrapper-bottom {
+            flex-wrap: wrap;
+            gap: $spacing-sm;
+        }
+        /* Le bloc CTA passe sous les informations */
+        .cta-save-card {
+            width: 100%;
+            a{
+                text-align: center;
+            }
+        }
+    }
+}
+

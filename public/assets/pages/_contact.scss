@@ -420,3 +420,29 @@ INFORMATIONS ENTREPRISE
         }
     }
 }
+
+/* =================== RESPONSIVE =====================*/
+
+/* Tablette */
+
+@media (max-width: 1030px){
+    /* Suppression de la marge latérale */
+    .infos-contact>.container{
+        width: 100%;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 640px){
+    /* La partie gauche avec l'aside passe en dessous du formulaire */
+    #form-content{
+        flex-direction: column;
+        align-items: stretch;
+        .form-card,
+    .aside-contact{
+        width: 100%;
+    }
+
+    }
+}

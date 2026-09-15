@@ -247,3 +247,66 @@
     }
 }
 
+/* =================== RESPONSIVE =====================*/
+
+
+/* Tablette */
+@media (max-width: 1064px){
+    .hero-title{
+        font-size: 2.25rem;
+    }
+    .filter>.container{
+        width: 100%;
+    }
+    /* Passage de la section filtre en colonne */
+    .filter-home {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: $spacing-base;
+        gap: $spacing-sm;
+        .wrapper{
+            padding-left: 0;
+        }
+    }
+    .filter-home select {
+        width: auto;
+    }
+    /* Les checkbox restent ensemble sur une ligne */
+    .checkbox-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-sm;
+    }
+    #pop-nb {
+        margin-left: auto;
+    }
+    /* Suppression de la marge et deux cards par ligne */
+    .grid-space>.container{
+        width: 100%;
+            .space-card{
+            min-width: 48%;
+        }
+    }
+
+   
+}
+
+/* Mobile */
+@media (max-width: 664px){
+    .grid-space>.container{
+        width: 100%;
+        .grid-cards {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-base;
+        }
+            .space-card{
+            width: 100%;
+        }
+    }
+}
+
+
+
+
